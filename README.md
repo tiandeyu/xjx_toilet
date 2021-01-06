@@ -31,5 +31,10 @@ binary_sensor:
     host: 192.168.2.55
     token: 5fef98a2990ba6068d3fa09c6f892eed
     scan_interval: 10
+```
 
+### 米家token获取
+```url
+https://github.com/tiandeyu/Xiaomi-cloud-tokens-extractor
+```
 
