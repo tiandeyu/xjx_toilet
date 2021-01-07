@@ -1,4 +1,4 @@
-## 小鲸洗智能坐便盖Pro
+## 小鲸洗智能坐便盖Pro/智能自动翻盖版
 
 
 >xjx_toilet是一款ha自定义插件,通过miio协议接入到homeassistant
