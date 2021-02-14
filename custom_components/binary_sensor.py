@@ -5,6 +5,7 @@ from homeassistant.const import (
     CONF_NAME,
     CONF_HOST,
     CONF_TOKEN,
+    CONF_UNIQUE_ID
 )
 from homeassistant.components.binary_sensor import (
     DEVICE_CLASS_OCCUPANCY,
@@ -19,6 +20,7 @@ PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend({
     vol.Required(CONF_NAME): cv.string,
     vol.Required(CONF_HOST): cv.string,
     vol.Required(CONF_TOKEN): cv.string,
+    vol.Optional(CONF_UNIQUE_ID): cv.string
 })
 
 
@@ -37,7 +39,7 @@ class XjxToilet(BinarySensorEntity):
         self._name = name
         self._device = Device(ip=host, token=token)
         self._state = False
-
+        self._unique_id = name
     def update(self):
         try:
             seating = self._device.get_properties(properties=['seating'])
@@ -49,6 +51,11 @@ class XjxToilet(BinarySensorEntity):
     def name(self):
         """Return the name of the device if any."""
         return self._name
+
+    @property
+    def unique_id(self):
+        """Return a unique ID."""
+        return self._unique_id
 
     @property
     def is_on(self) -> bool:
