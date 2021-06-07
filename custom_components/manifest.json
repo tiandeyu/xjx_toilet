@@ -1,6 +1,7 @@
 {
   "domain": "xjx_toilet",
   "name": "Xiaojingxi Toilet",
+  "version": "2021.6.6",
   "documentation": "https://www.natic.cn",
   "dependencies": [],
   "codeowners": ["@natic"],
